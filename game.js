@@ -439,13 +439,28 @@ function generateOutcomeGrid() {
         if (!grid) grid = generateNoWinGrid();
     }
 
-    // Scatter placement: ~1.5% chance to place 3+ scatters for feature trigger
+    // Scatter placement
     // (only in base game, free games handle scatters separately)
     if (!state.inFreeGames) {
         const scatterRoll = Math.random();
-        if (scatterRoll < 0.015) {
-            // Place 3-5 scatters in random positions
-            const numScatters = scatterRoll < 0.002 ? 5 : (scatterRoll < 0.005 ? 4 : 3);
+        if (scatterRoll < 0.0067) {
+            // ~0.67% chance = 1 in 150 spins triggers bonus (3+ scatters)
+            const triggerRoll = Math.random();
+            const numScatters = triggerRoll < 0.15 ? 5 : (triggerRoll < 0.40 ? 4 : 3);
+            const positions = [];
+            while (positions.length < numScatters) {
+                const r = Math.floor(Math.random() * CONFIG.reels);
+                const row = Math.floor(Math.random() * CONFIG.rows);
+                if (!positions.some(p => p.r === r && p.row === row)) {
+                    positions.push({ r, row });
+                }
+            }
+            for (const pos of positions) {
+                grid[pos.r][pos.row] = 'SC';
+            }
+        } else if (scatterRoll < 0.25) {
+            // ~24% of spins show 1-2 scatters (non-triggering teases)
+            const numScatters = Math.random() < 0.65 ? 1 : 2;
             const positions = [];
             while (positions.length < numScatters) {
                 const r = Math.floor(Math.random() * CONFIG.reels);

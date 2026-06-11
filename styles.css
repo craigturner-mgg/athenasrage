@@ -127,7 +127,7 @@ body {
     line-height: 1.2;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
-.sym-SC .symbol-icon { background: linear-gradient(135deg, #06b6d4, #0891b2); color: #fff; border-color: #67e8f9; box-shadow: 0 0 15px rgba(6, 182, 212, 0.6); }
+.sym-SC .symbol-icon { background: linear-gradient(135deg, #06b6d4, #0891b2); color: #fff; border-color: #67e8f9; box-shadow: 0 0 15px rgba(6, 182, 212, 0.6); border-radius: 50%; width: 68px; height: 68px; }
 
 .symbol-cell.wild-locked .symbol-icon {
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 0 40px rgba(255, 215, 0, 0.4);
