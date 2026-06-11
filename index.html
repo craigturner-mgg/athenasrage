@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gods and Legends: Athena's Rage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>ATHENA'S RAGE</h1>
+            <div id="feature-info"></div>
+        </div>
+
+        <div id="reels-frame">
+            <div id="reels-container">
+                <div class="reel" id="reel-0"><div class="reel-strip"></div></div>
+                <div class="reel" id="reel-1"><div class="reel-strip"></div></div>
+                <div class="reel" id="reel-2"><div class="reel-strip"></div></div>
+                <div class="reel" id="reel-3"><div class="reel-strip"></div></div>
+                <div class="reel" id="reel-4"><div class="reel-strip"></div></div>
+            </div>
+            <div id="winlines-overlay"></div>
+        </div>
+
+        <div id="info-bar">
+            <div id="win-display">WIN: <span id="win-amount">0.00</span></div>
+            <div id="balance-display">BALANCE: <span id="balance-amount">1000.00</span></div>
+        </div>
+
+        <div id="controls">
+            <div id="stake-control">
+                <button id="stake-down" class="btn-control">&lt;</button>
+                <span id="stake-display">1.00</span>
+                <button id="stake-up" class="btn-control">&gt;</button>
+            </div>
+            <button id="spin-btn">SPIN</button>
+            <div id="autoplay-controls">
+                <button class="btn-auto" data-spins="25">AUTO 25</button>
+                <button class="btn-auto" data-spins="50">AUTO 50</button>
+                <button class="btn-auto" data-spins="100">AUTO 100</button>
+                <button id="stop-auto-btn" class="btn-auto btn-auto-stop hidden">STOP</button>
+                <span id="auto-remaining" class="hidden"></span>
+            </div>
+            <div id="bonus-controls">
+                <label id="bonus-bet-label">
+                    <input type="checkbox" id="bonus-bet-toggle"> Bonus Bet
+                </label>
+                <button id="bonus-buy-btn" class="btn-secondary">BUY BONUS</button>
+            </div>
+        </div>
+
+        <div id="free-games-panel" class="hidden">
+            <div id="fg-spins">SPINS: <span id="fg-spins-count">0</span></div>
+            <div id="fg-level">LEVEL: <span id="fg-level-display">0</span></div>
+            <div id="fg-scatters">SCATTERS: <span id="fg-scatter-count">0</span> / <span id="fg-scatter-next">4</span></div>
+            <div id="fg-total-win">TOTAL WIN: <span id="fg-total-win-amount">0.00</span></div>
+        </div>
+
+        <div id="wild-respin-banner" class="hidden">WILD RESPIN!</div>
+        <div id="multiplier-banner" class="hidden">x<span id="multiplier-value">2</span> MULTIPLIER!</div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
